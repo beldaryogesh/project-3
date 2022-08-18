@@ -12,29 +12,31 @@ const isValidTitle = function (title) {
 }
 
 
-/*
 
-function dynamicSort(property) {
-    var sortOrder = 1;
 
-    if(property[0] === "-") {
-        sortOrder = -1;
-        property = property.substr(1);
-    }
+// function dynamicSort(property) {
+//     var sortOrder = 1;
 
-    return function (a, b) {
-        if(sortOrder == -1){
-            return b[property].localeCompare(a[property]);
-        }else{
-            return a[property].localeCompare(b[property]);
-        }        
-    }
-}
+//     if(property[0] === "-") {
+//         sortOrder = -1;
+//         property = property.substr(1);
+//     }
 
-*/
+//     return function (a, b) {
+//         if(sortOrder == -1){
+//             return b[property].localeCompare(a[property]);
+//         }else{
+//             return a[property].localeCompare(b[property]);
+//         }        
+//     }
+// }
+
+
 
 
 // Regex(s) used for the validation of different keys
+
+
 let nameRegex = /^[.a-zA-Z\s]+$/
 let emailRegex = /^[a-z]{1}[a-z0-9._]{1,100}[@]{1}[a-z]{2,15}[.]{1}[a-z]{2,10}$/
 let phoneRegex = /^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/

@@ -21,7 +21,8 @@ const createUser = async function (req, res) {
             return res.status(400).send({ status: false, message: "Please enter the user name. ⚠️" })
         if (!nameRegex.test(name))  // --> name should be provided in right format
             return res.status(400).send({ status: false, message: "name should contain alphabets only. ⚠️" })
-        data.name = data.name.split(' ').map(x => x[0].toUpperCase() + x.slice(1, x.length).toLowerCase()).join(' ')
+            
+            data.name = data.name.split(' ').map(x => x[0].toUpperCase() + x.slice(1, x.length).toLowerCase()).join(' ')
 
         if (!isValid(phone))  // --> phone number should be provided in the body
             return res.status(400).send({ status: false, message: "Please enter the phone number. ⚠️" })

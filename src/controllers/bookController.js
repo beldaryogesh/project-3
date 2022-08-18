@@ -34,16 +34,8 @@ let uploadFile = async (file) => {
         console.log("file uploaded succesfully")
         return resolve(data.Location)
     })
-
-    // let data= await s3.upload( uploadParams)
-    // if( data) return data.Location
-    // else return "there is an error"
-
    })
 }
-
-
-
 // ==> POST api : to generate bookCover URL
 
 const generateURL = async function (req, res) {
@@ -81,7 +73,7 @@ const createBook = async function (req, res) {
         let titlePresent = await bookModel.findOne({ title: title })
         if (titlePresent) return res.status(400).send({ status: false, message: "The title is already in use. Please provide another one." })
 
-        ISBN = ISBN.replace(/-/g, '')
+        ISBN = ISBN.replace(/-/g, '')    
         if (!isbnRegex.test(ISBN))  // --> ISBN should be provided in right format
             return res.status(400).send({ status: false, message: "This ISBN is not valid. ⚠️" })
         let isbnPresent = await bookModel.findOne({ ISBN: ISBN })
